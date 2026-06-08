@@ -7,94 +7,96 @@ import {
   TrendingUp, 
   Users, 
   Cpu, 
-  ChevronRight 
+  ChevronRight,
+  ArrowRight
 } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import Link from "next/link";
 
 const SERVICES = [
   {
     title: "Website Development",
-    description: "High-performance, responsive, and SEO-friendly websites tailored to your business goals.",
+    description: "High-performance, responsive corporate websites, portals, and SEO-friendly architectures.",
     icon: Globe,
-    items: ["Corporate Websites", "E-Commerce Platforms", "Custom Admin Panels"],
-    color: "primary"
+    href: "/services/web",
+    items: ["Corporate Portals", "E-Commerce", "Admin Panels"]
   },
   {
     title: "Mobile App Development",
-    description: "Scalable iOS and Android applications built with modern frameworks for seamless experiences.",
+    description: "Scalable iOS and Android applications built for high engagement and seamless experiences.",
     icon: Smartphone,
-    items: ["Native iOS & Android", "React Native", "Flutter Apps"],
-    color: "accent"
+    href: "/services/mobile",
+    items: ["Native Apps", "React Native", "Flutter Development"]
   },
   {
     title: "Salesforce Solutions",
-    description: "Enterprise-level CRM customization and implementation to streamline your business operations.",
+    description: "Expert CRM customization, implementation, and automation to streamline operations.",
     icon: Database,
-    items: ["Implementation", "Custom Apps", "Automation Flows"],
-    color: "primary"
+    href: "/services/salesforce",
+    items: ["Implementation", "Custom Apps", "Data Migration"]
   },
   {
     title: "Digital Marketing",
-    description: "Data-driven marketing strategies that increase visibility and drive meaningful conversions.",
+    description: "Data-driven marketing strategies that increase brand visibility and conversions.",
     icon: TrendingUp,
-    items: ["SEO & SEM", "Content Strategy", "Performance Ads"],
-    color: "accent"
+    href: "/services/digital-marketing",
+    items: ["SEO & SEM", "Content Strategy", "Performance Ads"]
   },
   {
     title: "Social Media Growth",
-    description: "Building powerful online communities and scaling brand presence across all social platforms.",
+    description: "Building powerful online communities and scaling presence across social platforms.",
     icon: Users,
-    items: ["Viral Content", "Community Management", "Influencer Hub"],
-    color: "primary"
+    href: "/services/social-media",
+    items: ["Viral Content", "Community Management", "Influencers"]
   },
   {
     title: "AI & Automation",
-    description: "Integrating intelligent AI solutions to automate repetitive tasks and optimize workflows.",
+    description: "Integrating intelligent AI solutions to automate tasks and optimize your business flows.",
     icon: Cpu,
-    items: ["Custom Chatbots", "Workflow Automation", "Predictive Analytics"],
-    color: "accent"
+    href: "/services/ai",
+    items: ["Custom Chatbots", "Workflow Automation", "Predictive Analytics"]
   }
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-24 bg-background relative">
+    <section id="services" className="section-padding bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">What we do</h2>
-          <h3 className="text-4xl md:text-5xl font-headline font-bold mb-6">Our Services</h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We offer a comprehensive suite of digital solutions designed to help your business excel in a competitive landscape.
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Expert Services</h2>
+          <h3 className="text-4xl md:text-5xl font-bold">We Are Expert In <span className="text-blue-600">IT Solutions</span></h3>
+          <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+            Our cutting-edge industry solutions are supported by the most recent technology to maximize your growth potential.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service, idx) => (
-            <Card key={idx} className="group relative glass p-8 border-white/5 hover:border-primary/50 transition-all duration-500 overflow-hidden">
-              <div className="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-500" />
-              
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 bg-secondary group-hover:bg-primary group-hover:glow-blue`}>
+            <div key={idx} className="modern-card p-10 group bg-white">
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-all duration-300">
                 <service.icon className="w-8 h-8 text-primary group-hover:text-white" />
               </div>
 
-              <h4 className="text-2xl font-headline font-bold mb-4">{service.title}</h4>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <h4 className="text-2xl font-bold mb-4">{service.title}</h4>
+              <p className="text-gray-500 mb-8 leading-relaxed line-clamp-2">
                 {service.description}
               </p>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-10">
                 {service.items.map((item, i) => (
-                  <li key={i} className="flex items-center text-sm font-medium text-foreground/80">
-                    <ChevronRight className="w-4 h-4 text-accent mr-2" />
+                  <li key={i} className="flex items-center text-sm font-semibold text-gray-700">
+                    <ChevronRight className="w-4 h-4 text-primary mr-2" />
                     {item}
                   </li>
                 ))}
               </ul>
 
-              <button className="text-primary font-bold inline-flex items-center gap-1 group/btn hover:text-accent transition-colors">
-                Learn More <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </button>
-            </Card>
+              <Link 
+                href={service.href} 
+                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+              >
+                Learn More <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           ))}
         </div>
       </div>
