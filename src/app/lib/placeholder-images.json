@@ -1,0 +1,22 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Abstract futuristic digital network",
+      "imageUrl": "https://picsum.photos/seed/blue-nova-hero/1920/1080",
+      "imageHint": "abstract technology network"
+    },
+    {
+      "id": "o2bharat",
+      "description": "O2Bharat Platform Interface",
+      "imageUrl": "https://picsum.photos/seed/o2bharat/1200/800",
+      "imageHint": "modern dashboard interface"
+    },
+    {
+      "id": "project-1",
+      "description": "Enterprise Solutions Dashboard",
+      "imageUrl": "https://picsum.photos/seed/enterprise/1200/800",
+      "imageHint": "data visualization dashboard"
+    }
+  ]
+}
