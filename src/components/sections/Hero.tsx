@@ -27,12 +27,16 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-8 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-500">
-            <Button size="lg" className="h-20 px-16 rounded-full text-2xl font-bold bg-primary hover:scale-105 transition-transform shadow-2xl shadow-primary/20">
-              Start Your Journey <ArrowRight className="ml-3 w-7 h-7" />
-            </Button>
-            <Button size="lg" variant="outline" className="h-20 px-16 rounded-full text-2xl font-bold border-2 border-slate-200 hover:bg-slate-50 transition-all">
-              <PlayCircle className="mr-3 w-7 h-7" /> Our Story
-            </Button>
+            <Link href="/consulting">
+              <Button size="lg" className="h-20 px-16 rounded-full text-2xl font-bold bg-primary hover:scale-105 transition-transform shadow-2xl shadow-primary/20">
+                Book Consulting <ArrowRight className="ml-3 w-7 h-7" />
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button size="lg" variant="outline" className="h-20 px-16 rounded-full text-2xl font-bold border-2 border-slate-200 hover:bg-slate-50 transition-all">
+                <PlayCircle className="mr-3 w-7 h-7" /> Our Story
+              </Button>
+            </Link>
           </div>
 
           <div className="mt-24 w-full max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-slate-100 pt-16 animate-in fade-in duration-1000 delay-700">

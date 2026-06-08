@@ -13,10 +13,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const SERVICES = [
-  { name: "Web Engineering", href: "#services" },
-  { name: "AI & Automation", href: "#services" },
-  { name: "Cloud Solutions", href: "#services" },
-  { name: "CyberSecurity", href: "#services" },
+  { name: "Services", href: "/services" },
+  { name: "AI & Automation", href: "/services/ai" },
+  { name: "Web Development", href: "/services/web" },
+  { name: "Mobile Apps", href: "/services/mobile" },
+  { name: "Digital Marketing", href: "/services/digital-marketing" },
 ];
 
 export function Navbar() {
@@ -47,10 +48,13 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-8">
           <Link href="/" className="text-sm font-bold text-slate-600 hover:text-primary transition-colors">Home</Link>
-          <Link href="#about" className="text-sm font-bold text-slate-600 hover:text-primary transition-colors">About</Link>
-          
+          <Link href="/about" className="text-sm font-bold text-slate-600 hover:text-primary transition-colors">About</Link>
+          <Link href="/case-studies" className="text-sm font-bold text-slate-600 hover:text-primary transition-colors">Case Studies</Link>
+          <Link href="/blog" className="text-sm font-bold text-slate-600 hover:text-primary transition-colors">Blog</Link>
+          <Link href="/#careers" className="text-sm font-bold text-slate-600 hover:text-primary transition-colors">Careers</Link>
+
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-bold text-slate-600 hover:text-primary transition-colors outline-none">
               Expertise <ChevronDown className="w-4 h-4" />
@@ -63,15 +67,14 @@ export function Navbar() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-
-          <Link href="#portfolio" className="text-sm font-bold text-slate-600 hover:text-primary transition-colors">Work</Link>
-          <Link href="#careers" className="text-sm font-bold text-slate-600 hover:text-primary transition-colors">Careers</Link>
         </div>
 
-        <div className="hidden lg:flex items-center gap-6">
-          <Button className="h-12 px-8 rounded-full bg-slate-900 text-white font-bold hover:scale-105 transition-transform">
-            Get Started
-          </Button>
+        <div className="hidden lg:flex items-center gap-4">
+          <Link href="/consulting">
+            <Button className="h-12 px-8 rounded-full bg-primary text-white font-bold hover:scale-105 transition-transform">
+              Book Consultation
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -87,11 +90,14 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white border-t p-10 lg:hidden flex flex-col gap-10 shadow-2xl h-screen animate-in fade-in slide-in-from-top-4">
            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">Home</Link>
-           <Link href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">About</Link>
-           <Link href="#services" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">Expertise</Link>
-           <Link href="#careers" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">Careers</Link>
-           <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">Contact</Link>
-           <Button className="w-full h-18 rounded-full bg-primary text-xl font-bold">Contact Now</Button>
+           <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">About</Link>
+           <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">Case Studies</Link>
+           <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">Blog</Link>
+           <Link href="/#careers" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">Careers</Link>
+           <Link href="/consulting" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-serif font-black">Consulting</Link>
+           <Link href="/consulting" onClick={() => setIsMobileMenuOpen(false)} className="w-full">
+             <Button className="w-full h-18 rounded-full bg-primary text-xl font-bold">Book Now</Button>
+           </Link>
         </div>
       )}
     </nav>

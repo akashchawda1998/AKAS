@@ -54,11 +54,10 @@ export function Footer() {
               {[
                 { name: "About Klique", href: "/about" },
                 { name: "Case Studies", href: "/case-studies" },
-                { name: "Career", href: "#" },
-                { name: "Blog", href: "#" },
-                { name: "Trainer", href: "#" },
-                { name: "Trainee", href: "#" },
-                { name: "Freelancer", href: "#" }
+                { name: "Blog", href: "/blog" },
+                { name: "Consulting", href: "/consulting" },
+                { name: "Career", href: "/#careers" },
+                { name: "Contact", href: "/#contact" }
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-gray-400 hover:text-primary transition-colors text-sm font-medium">{link.name}</Link>
