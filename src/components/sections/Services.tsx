@@ -1,12 +1,12 @@
 "use client";
 
 import { 
-  Globe, 
-  Smartphone, 
-  Database, 
-  TrendingUp, 
-  Users, 
+  Code, 
   Cpu, 
+  Cloud, 
+  ShieldAlert, 
+  Smartphone, 
+  Settings2,
   ChevronRight,
   ArrowRight
 } from "lucide-react";
@@ -14,87 +14,71 @@ import Link from "next/link";
 
 const SERVICES = [
   {
-    title: "Website Development",
-    description: "High-performance, responsive corporate websites, portals, and SEO-friendly architectures.",
-    icon: Globe,
-    href: "/services/web",
-    items: ["Corporate Portals", "E-Commerce", "Admin Panels"]
+    title: "Web Engineering",
+    desc: "Next-gen React and Next.js platforms optimized for high performance and global scale.",
+    icon: Code,
+    color: "bg-blue-500"
   },
   {
-    title: "Mobile App Development",
-    description: "Scalable iOS and Android applications built for high engagement and seamless experiences.",
-    icon: Smartphone,
-    href: "/services/mobile",
-    items: ["Native Apps", "React Native", "Flutter Development"]
-  },
-  {
-    title: "Salesforce Solutions",
-    description: "Expert CRM customization, implementation, and automation to streamline operations.",
-    icon: Database,
-    href: "/services/salesforce",
-    items: ["Implementation", "Custom Apps", "Data Migration"]
-  },
-  {
-    title: "Digital Marketing",
-    description: "Data-driven marketing strategies that increase brand visibility and conversions.",
-    icon: TrendingUp,
-    href: "/services/digital-marketing",
-    items: ["SEO & SEM", "Content Strategy", "Performance Ads"]
-  },
-  {
-    title: "Social Media Growth",
-    description: "Building powerful online communities and scaling presence across social platforms.",
-    icon: Users,
-    href: "/services/social-media",
-    items: ["Viral Content", "Community Management", "Influencers"]
-  },
-  {
-    title: "AI & Automation",
-    description: "Integrating intelligent AI solutions to automate tasks and optimize your business flows.",
+    title: "AI & Innovation",
+    desc: "Custom Generative AI models and predictive analytics integrated into your business DNA.",
     icon: Cpu,
-    href: "/services/ai",
-    items: ["Custom Chatbots", "Workflow Automation", "Predictive Analytics"]
+    color: "bg-cyan-500"
+  },
+  {
+    title: "Cloud Infrastructure",
+    desc: "AWS and Azure management with a focus on high availability and serverless architecture.",
+    icon: Cloud,
+    color: "bg-indigo-500"
+  },
+  {
+    title: "CyberSecurity",
+    desc: "Enterprise-grade protection, threat detection, and zero-trust security implementation.",
+    icon: ShieldAlert,
+    color: "bg-red-500"
+  },
+  {
+    title: "Mobile Dominance",
+    desc: "Native iOS and Android experiences built with Flutter and React Native.",
+    icon: Smartphone,
+    color: "bg-emerald-500"
+  },
+  {
+    title: "DevOps & Scale",
+    desc: "Continuous integration and delivery pipelines that accelerate your time-to-market.",
+    icon: Settings2,
+    color: "bg-amber-500"
   }
 ];
 
 export function Services() {
   return (
-    <section id="services" className="section-padding bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Expert Services</h2>
-          <h3 className="text-4xl md:text-5xl font-bold">We Are Expert In <span className="text-blue-600">IT Solutions</span></h3>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-            Our cutting-edge industry solutions are supported by the most recent technology to maximize your growth potential.
+    <section id="services" className="section-padding bg-slate-50 relative overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-4xl mx-auto mb-24 space-y-6">
+          <h2 className="text-sm font-bold text-primary uppercase tracking-[0.4em]">What We Do</h2>
+          <h3 className="text-5xl md:text-8xl font-serif font-black text-slate-900">
+            End-to-End <br /> <span className="text-gradient">IT Solutions.</span>
+          </h3>
+          <p className="text-xl text-slate-500 font-medium">
+            We solve the most complex business problems through elite technical engineering and creative vision.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SERVICES.map((service, idx) => (
-            <div key={idx} className="modern-card p-10 group bg-white">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-all duration-300">
-                <service.icon className="w-8 h-8 text-primary group-hover:text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {SERVICES.map((s, i) => (
+            <div key={i} className="glass-card p-12 group hover:bg-slate-900 hover:border-slate-800">
+              <div className={`w-20 h-20 ${s.color} rounded-[2rem] flex items-center justify-center mb-10 group-hover:scale-110 transition-transform shadow-xl`}>
+                <s.icon className="w-10 h-10 text-white" />
               </div>
-
-              <h4 className="text-2xl font-bold mb-4">{service.title}</h4>
-              <p className="text-gray-500 mb-8 leading-relaxed line-clamp-2">
-                {service.description}
+              <h4 className="text-3xl font-serif font-black mb-6 text-slate-900 group-hover:text-white transition-colors">
+                {s.title}
+              </h4>
+              <p className="text-lg text-slate-500 group-hover:text-slate-400 leading-relaxed mb-10 transition-colors">
+                {s.desc}
               </p>
-
-              <ul className="space-y-3 mb-10">
-                {service.items.map((item, i) => (
-                  <li key={i} className="flex items-center text-sm font-semibold text-gray-700">
-                    <ChevronRight className="w-4 h-4 text-primary mr-2" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <Link 
-                href={service.href} 
-                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
-              >
-                Learn More <ArrowRight className="w-4 h-4" />
+              <Link href="#" className="inline-flex items-center gap-2 text-primary font-bold group-hover:text-white transition-all hover:gap-4">
+                Explore Tech <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           ))}

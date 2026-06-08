@@ -4,8 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
-  title: 'Klique Software Solutions | Global Leader in CRM & IT Excellence',
-  description: 'Providing world-class CRM solutions and IT services. Expert Salesforce consulting, Web & Mobile development, and AI automation.',
+  title: 'kLIQUE Technologies | Modern IT & CRM Solutions',
+  description: 'Global leader in Web Development, AI, Cloud, and Cybersecurity.',
 };
 
 export default function RootLayout({
@@ -18,9 +18,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased min-h-screen flex flex-col selection:bg-primary/20 selection:text-primary">
+      <body className="font-sans antialiased min-h-screen flex flex-col selection:bg-primary/20 selection:text-primary">
         <Navbar />
         <main className="flex-grow">
           {children}
