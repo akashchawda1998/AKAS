@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Space Grotesk', 'sans-serif'],
+        headline: ['Plus Jakarta Sans', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
@@ -55,9 +55,23 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-mesh': 'radial-gradient(at 0% 0%, hsla(220,100%,60%,0.15) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(188,100%,55%,0.15) 0, transparent 50%)',
+        'gradient-mesh': 'radial-gradient(at 0% 0%, hsla(220,100%,60%,0.1) 0, transparent 50%), radial-gradient(at 100% 100%, hsla(199,100%,50%,0.1) 0, transparent 50%)',
+        'soft-glow': 'radial-gradient(circle at 50% 50%, hsla(221, 83%, 53%, 0.1), transparent 70%)',
       },
+      animation: {
+        'fade-up': 'fadeUp 0.5s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+      },
+      keyframes: {
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        }
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],
