@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 221 31% 8%;
-    --foreground: 210 40% 98%;
-    --card: 221 31% 10%;
-    --card-foreground: 210 40% 98%;
-    --popover: 221 31% 8%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 220 100% 60%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 210 40% 98%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 221 31% 15%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 221 31% 15%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 188 100% 55%;
-    --accent-foreground: 221 31% 8%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 222 47% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 221 31% 18%;
-    --input: 221 31% 18%;
-    --ring: 220 100% 60%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
     --radius: 0.75rem;
   }
 }
@@ -32,11 +32,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body selection:bg-primary/30 selection:text-accent;
+    @apply bg-background text-foreground font-body selection:bg-primary/30 selection:text-primary;
     background-image: 
-      radial-gradient(circle at 0% 0%, hsla(220, 100%, 60%, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, hsla(188, 100%, 55%, 0.05) 0%, transparent 50%);
-    background-attachment: fixed;
+      radial-gradient(circle at 0% 0%, hsla(221, 83%, 53%, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, hsla(199, 89%, 48%, 0.03) 0%, transparent 50%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline tracking-tight;
@@ -44,15 +43,11 @@
 }
 
 .glass {
-  @apply bg-card/40 backdrop-blur-xl border border-white/10;
+  @apply bg-white/70 backdrop-blur-xl border border-blue-100;
 }
 
 .glow-blue {
-  box-shadow: 0 0 20px -5px hsla(220, 100%, 60%, 0.3);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 20px -5px hsla(188, 100%, 55%, 0.3);
+  box-shadow: 0 10px 25px -5px hsla(221, 83%, 53%, 0.2);
 }
 
 .text-gradient {

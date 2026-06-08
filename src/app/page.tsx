@@ -1,79 +1,141 @@
-import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { Partners } from "@/components/sections/Partners";
 import { Services } from "@/components/sections/Services";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { ProjectEstimator } from "@/components/sections/ProjectEstimator";
-import { Footer } from "@/components/sections/Footer";
+import { Technologies } from "@/components/sections/Technologies";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Cloud, Shield, Users, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
+    <div className="space-y-0">
+      {/* 1. Hero Section */}
       <Hero />
-      <Services />
-      
-      {/* About Mission Highlight */}
-      <section id="about" className="py-24 relative overflow-hidden">
+
+      {/* 2. Partners/Clientele Section */}
+      <Partners />
+
+      {/* 3. Who We Are (Overview) */}
+      <section id="about-overview" className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <div className="inline-block px-4 py-1.5 rounded-full glass border border-accent/20 text-accent text-sm font-bold animate-float">
-              OUR MISSION
-            </div>
-            <h2 className="text-4xl md:text-6xl font-headline font-bold leading-tight">
-              Building Technology That <br /> 
-              <span className="text-gradient">Creates Real Impact</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              We are a next-generation IT solutions company focused on delivering modern digital experiences through technology, automation, marketing, and innovation. Our mission is not just to develop software — but to create ecosystems that empower businesses and communities.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
-              {[
-                { label: "Founded", val: "2021" },
-                { label: "Projects", val: "150+" },
-                { label: "Experts", val: "25+" },
-                { label: "Impact", val: "Global" }
-              ].map((stat, i) => (
-                <div key={i} className="space-y-2">
-                  <div className="text-3xl font-headline font-bold text-primary">{stat.val}</div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{stat.label}</div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold">
+                WHO WE ARE
+              </div>
+              <h2 className="text-4xl md:text-5xl font-headline font-bold leading-tight">
+                Empowering Businesses Worldwide with <span className="text-primary">CRM Excellence</span>
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                One of the best Salesforce development companies in India, Klique primarily serves clients from the USA, UK, Australia, and the APAC region. We focus on providing scalable, high-quality solutions for the most challenging business issues.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center shrink-0">
+                    <Shield className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold">Trusted Experts</h4>
+                    <p className="text-sm text-muted-foreground">20+ years of collective excellence</p>
+                  </div>
                 </div>
-              ))}
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-accent/5 flex items-center justify-center shrink-0">
+                    <Users className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold">Client Centric</h4>
+                    <p className="text-sm text-muted-foreground">Empathy driven solutions</p>
+                  </div>
+                </div>
+              </div>
+              <Button asChild className="rounded-full h-12 px-8">
+                <Link href="/about">Read Our Story <ArrowRight className="ml-2 w-4 h-4" /></Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full" />
+              <img 
+                src="https://picsum.photos/seed/klique-team/800/600" 
+                alt="Klique Team" 
+                className="relative rounded-3xl shadow-2xl border border-blue-50"
+                data-ai-hint="team office"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <ProjectEstimator />
-      <Portfolio />
-      
-      {/* Final CTA */}
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="relative rounded-[3rem] overflow-hidden glass p-12 md:p-24 border-primary/20 glow-blue text-center">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[120px] -mr-48 -mt-48" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 blur-[120px] -ml-48 -mb-48" />
-            
-            <div className="relative z-10 space-y-8">
-              <h2 className="text-4xl md:text-6xl font-headline font-bold tracking-tight">
-                Ready to scale your <br /> vision to the next level?
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Join the ranks of visionary companies that choose BlueNova Systems to architect their digital future.
+      {/* 4. Services Section */}
+      <Services />
+
+      {/* 5. Technologies Section */}
+      <Technologies />
+
+      {/* 6. AI & Innovation Highlight */}
+      <section className="py-24 bg-primary text-white overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)]" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 space-y-6">
+              <h2 className="text-4xl md:text-6xl font-headline font-bold">Leading the <span className="text-accent">AI Revolution</span></h2>
+              <p className="text-xl text-primary-foreground/90 max-w-xl">
+                We integrate cutting-edge Artificial Intelligence and Automation to transform your business processes and predictive capabilities.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-                <button className="h-16 px-10 rounded-full bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-all glow-blue">
-                  Start Your Project Now
-                </button>
-                <button className="h-16 px-10 rounded-full glass border-white/10 font-bold text-lg hover:bg-white/5 transition-all">
-                  Contact Sales Team
-                </button>
+              <Button variant="outline" asChild className="rounded-full h-12 px-8 border-white/20 hover:bg-white/10 text-white">
+                <Link href="/services/ai">Explore AI Solutions</Link>
+              </Button>
+            </div>
+            <div className="flex-1 grid grid-cols-2 gap-4">
+              <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/10">
+                <Zap className="w-10 h-10 mb-4 text-accent" />
+                <h4 className="font-bold text-xl mb-2">Automation</h4>
+                <p className="text-sm text-primary-foreground/70">Seamless workflow optimizations.</p>
+              </div>
+              <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/10 translate-y-8">
+                <Cloud className="w-10 h-10 mb-4 text-accent" />
+                <h4 className="font-bold text-xl mb-2">Cloud AI</h4>
+                <p className="text-sm text-primary-foreground/70">Scalable intelligence in the cloud.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
-    </main>
+      {/* 7. Case Studies / Portfolio */}
+      <Portfolio />
+
+      {/* 8. Project Estimator (AI Tool) */}
+      <ProjectEstimator />
+
+      {/* 9. Testimonials Section */}
+      <Testimonials />
+
+      {/* 10. Final CTA Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="relative rounded-[3rem] overflow-hidden bg-primary p-12 md:p-20 text-center text-white">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 blur-[120px] -mr-48 -mt-48" />
+            <div className="relative z-10 space-y-8">
+              <h2 className="text-4xl md:text-5xl font-headline font-bold">Ready to Scale Your Vision?</h2>
+              <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+                Join hundreds of global businesses that trust Klique for their most challenging digital transformations.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+                <Button size="lg" className="rounded-full bg-white text-primary hover:bg-white/90 font-bold px-10">
+                  Start Now
+                </Button>
+                <Button size="lg" variant="outline" className="rounded-full border-white/20 text-white hover:bg-white/10 font-bold px-10">
+                  Contact Us
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
